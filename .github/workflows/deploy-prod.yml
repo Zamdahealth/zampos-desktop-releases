@@ -1,0 +1,39 @@
+name: Deploy MAIN branch to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # If using React/Vite/Next, add build scripts here
+      # Example for Vite:
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist   # change if your build folder is not "dist"
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

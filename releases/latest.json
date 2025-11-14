@@ -1,10 +1,10 @@
 {
-  "version": "0.1.1",
-  "notes": "ZamdaHealth POS Prod V0.1.1",
+  "version": "0.1.0",
+  "notes": "zamdahealth version 0.1.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSLyt0dE4rLzFUWFdtRjk5dGVVMnFlNXJHYklLWlF5aDdLMVJSMFBWRDdCWC9ZL1J3NjM4V2RDbmEyTEowb01vNFF2M1JLRlVrSGFXaUtSOE1OQ1hlZk9ubm93WlJrUGdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzYyNzI3MjAxCWZpbGU6emFtZGFoZWFsdGgtcG9zLWRlc2t0b3BfMC4xLjFfeDY0LXNldHVwLmV4ZQowaDFhMFIxaUlackQ0UTR1VHVsVE90TmhYNk1nUnp3RVNNMW9IcnU4a1ZEL3I5N3lDcG0zRy96amNwV1F3VUJZYi9KRFhTNkYzcHM4SmNId1J3UEhBQT09Cg==",
-      "url": "https://github.com/johnmartins-hillary/zamdahealth-pos-desktop-releases/releases/download/zampos-prod_v0.1.1/zamdahealth-pos-desktop_0.1.1_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSZXRFYnlRRjhtZkg4ejVXNVRsaGQ4NGdUOXhLTm5IRWZYSFdsM080WnUycVlpTlhrcVE3UFVWbDVOSjIrUEVqRERKV1hxY0FCODd4SzE3MloybEMxS05IUDVaOGtwcFFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzYzMDcwMTQ2CWZpbGU6emFtZGFoZWFsdGgtcG9zLWRlc2t0b3BfMC4xLjBfeDY0LXNldHVwLmV4ZQo3VmdrVXV2QTNDaHBnOVFISXRzc3lGT2p2VVRSZ3BrVnBzR2JETkF5eDlzcHgvSUpuaXJSdmlJdFg4UVNJVmZLOTdVR1dXam15a3hDRnNQL1BwbTVEQT09Cg==",
+      "url": "https://zampos-desktop-staging.netlify.app/releases/zamdahealth-pos-desktop_0.1.0_x64-setup.exe"
     }
   }
 }

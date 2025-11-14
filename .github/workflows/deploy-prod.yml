@@ -1,39 +1,20 @@
-name: Deploy MAIN branch to GitHub Pages
+name: Deploy MAIN release to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-
-permissions:
-  pages: write
-  id-token: write
+    branches:
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      # If using React/Vite/Next, add build scripts here
-      # Example for Vite:
-      - name: Install
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy main release
+        uses: peaceiris/actions-gh-pages@v6
         with:
-          path: ./dist   # change if your build folder is not "dist"
-
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./releases
+          cname: https://zampos-desktop.zamdahealth.com

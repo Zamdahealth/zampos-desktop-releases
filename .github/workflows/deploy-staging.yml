@@ -1,42 +1,20 @@
-name: Deploy STAGING branch to GitHub Pages
+name: Deploy STAGING release to GitHub Pages
 
 on:
   push:
-    branches: [ staging ]
-
-permissions:
-  pages: write
-  id-token: write
+    branches:
+      - staging
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      # If using React/Vite/Next, add build scripts here
-      # Example:
-      - name: Install
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy staging release
+        uses: peaceiris/actions-gh-pages@v6
         with:
-          path: ./dist   # change this to your build folder
-
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
-        with:
-          # Key difference — unique project name
-          project_name: staging
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./releases
+          cname: https://zampos-desktop-stg.zamdahealth.com

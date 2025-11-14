@@ -17,4 +17,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./releases
-          cname: https://zampos-desktop.zamdahealth.com
+          cname: zampos-desktop.zamdahealth.com

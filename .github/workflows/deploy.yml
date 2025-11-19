@@ -1,0 +1,51 @@
+name: Deploy GitHub Pages (Main + Staging)
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+  workflow_dispatch: # optional manual trigger
+
+jobs:
+  deploy-main:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build production
+        run: npm run build
+
+      - name: Deploy production to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: pages-main
+          publish_dir: ./releases
+          cname: zampos-desktop.zamdahealth.com
+
+  deploy-staging:
+    if: github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout staging branch
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build staging
+        run: npm run build
+
+      - name: Deploy staging to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: pages-staging
+          publish_dir: ./releases
+          cname: staging.zampos-desktop.zamdahealth.com

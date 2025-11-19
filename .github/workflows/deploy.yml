@@ -22,12 +22,3 @@ jobs:
           publish_branch: pages-main        # production deployment branch
           publish_dir: ./releases           # folder containing static files
           cname: zampos-desktop.zamdahealth.com
-
-      - name: Deploy Staging
-        if: github.ref == 'refs/heads/staging'
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: pages-staging     # staging deployment branch
-          publish_dir: ./releases           # folder containing static files
-          cname: staging.zampos-desktop.zamdahealth.com
